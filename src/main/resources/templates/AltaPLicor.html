@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Registrar Precio Licor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+<!-- Nuestro css-->
+<link rel="stylesheet" type="text/css" href="static/css/fondo.css"
+	th:href="@{/css/fondo.css}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+	<header th:replace="layout/plantilla :: encabezado"></header>
+	
+	<div class="container mt-4">
+	
+		<form th:action="@{/guardarPLicor}" th:object="${licors}" method="POST">
+			<div class="mb-6">
+				<label for="id_PL" class="form-label">CODIGO DE PRODUCTO</label> <input
+					th:field="*{id_PL}" class="form-control" type="text"
+					placeholder="id_PL" aria-label="IDPrecio" disabled>
+			</div>
+			<div class="mb-6">
+				<label for="idsabor" class="form-label">SABOR</label>
+				<textarea th:field="*{sabor}" class="form-control"
+					required="required" id="sabor" rows="3"></textarea>
+			</div>
+			<div class="mb-6">
+				<label for="idpreCB" class="form-label">preCB</label>
+				<textarea th:field="*{preCB}" class="form-control"
+					required="required" id="preCB" rows="3"></textarea>
+			</div>
+			<div class="mb-6">
+				<label for="idpreGB" class="form-label">preGB</label>
+				<textarea th:field="*{preGB}" class="form-control" required="required"
+					id="ram" rows="3"></textarea>
+			</div>
+					
+<div class="col-12">
+			<button type="submit" class="btn btn-primary">Guardar</button>
+			<button type="submit" class="btn btn-warning">Cancelar</button>
+			</div>
+		</form>
+	</div>
+
+	<footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Precios</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="static/css/fondo.css"
+	th:href="@{/css/fondo.css}">
+</head>
+<body>
+
+	<header th:replace="layout/plantilla :: encabezado"> </header>
+
+
+	<!--menu-->
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="card" style="width: 18rem;">
+				<img src="static/imagenes/1.jpg" th:src="@{/imagenes/1.jpg}"
+					class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title" th:text="#{paginaP.body-c}">MERMELADAS</h5>
+					<p class="card-text" th:text="#{paginaP.body-c1}">Informacion
+						sobre los componentes del sistemas desarrollado</p>
+					<a href="#" class="btn btn-primary" th:href="@{/gestionPMermelada}" th:text="#{paginaP.body-sm}">saber
+						mas..</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="card" style="width: 18rem;">
+				<img src="static/imagenes/2.jpg" th:src="@{/imagenes/2.jpg}"
+					class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title" th:text="#{paginaP.body-cu}">SALSAS</h5>
+					<p class="card-text" th:text="#{paginaP.body-cu1}">Guia de uso
+						sobre la aplicacion y la conexionn con el sensror</p>
+					<a href="#" class="btn btn-primary" th:href="@{/gestionPrecios}" th:text="#{paginaP.body-sm}">saber
+						mas..</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="card" style="width: 18rem;">
+				<img src="static/imagenes/3.jpg" th:src="@{/imagenes/3.jpg}"
+					class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title" th:text="#{paginaP.body-tes}">CAJAS</h5>
+					<p class="card-text" th:text="#{paginaP.body-tes1}">En caso de
+						desear realizar la prueva de temperaturas alcanzadas por el
+						dispositivo habra aqui</p>
+					<a href="#" class="btn btn-primary" th:href="@{/gestionPCajas}" th:text="#{paginaP.body-sm}">saber
+						mas..</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="card" style="width: 18rem;">
+				<img src="static/imagenes/4.jpg" th:src="@{/imagenes/4.jpg}"
+					class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title" th:text="#{paginaP.body-con}">LICOR</h5>
+					<p class="card-text" th:text="#{paginaP.body-con1}">para
+						aclarar Dudas, o dejar sus comentarios a los desarrolladores de
+						crick en saber mas</p>
+					<a href="#" class="btn btn-primary" th:href="@{/gestionPLicor}" th:text="#{paginaP.body-sm}">Go
+						somewhere</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<footer th:replace="layout/plantilla :: footer"> </footer>
+</body>
+</html>

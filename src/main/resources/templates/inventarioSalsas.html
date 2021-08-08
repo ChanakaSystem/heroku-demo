@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Salsas en Inventario</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+<!-- Nuestro css-->
+    	<link rel="stylesheet" type="text/css" href="static/css/fondo.css" th:href="@{/css/fondo.css}">
+
+</head>
+<body>
+	<header th:replace="layout/plantilla :: encabezado"></header>
+	<br/>
+	<a th:href="@{/nuevoISalsas}" class="btn btn-primary">[[#{BD.TB-TITULO0}]]</a> <!--Nueva Mermelada -->
+
+	<div class="container-lg">
+
+		<table class="table">
+			<thead class="table-dark table-sm">
+				<tr>
+					<th scope="col">[[#{BD.TB-TITULO1}]]</th><!-- id_PL -->
+					<th scope="col">SABOR</th><!-- sabor -->
+					<th scope="col">TAMAÑO</th><!-- preCB -->
+					<th scope="col">CANTIDAD</th><!-- preCG -->
+					<th scope="col">FECHA DE REGISTRO</th><!-- preCG -->
+					<th scope="col">FECHA DE CADUCIDAD</th><!-- preCG -->
+					<th scope="col">[[#{BD.TB-TITULO9}]]</th><!--Editar -->
+					<th scope="col">[[#{BD.TB-TITULO10}]]</th><!-- Eliminar -->
+			</thead>
+			<tbody>
+				<tr th:each="si:${ls}">
+					<td th:text="${si.id_RS}">Codigo de producto</td>
+					<td th:text="${si.sabor}">Sabor</td>
+					<td th:text="${si.tam}">PrecioCH</td>
+					<td th:text="${si.cantidad}">PrecioGB</td>
+					<td th:text="${si.fechaR}">PrecioGB</td>
+					<td th:text="${si.fechaC}">PrecioGB</td>
+															<td >
+					<a th:href="@{/editarISalsas/}+${si.id_RS}" class="btn btn-warning">[[#{BD.TB-TITULO9}]]</a>
+					</td>
+					<td>
+					<a th:href="@{/eliminarISalsas/}+${si.id_RS}" class="btn btn-danger">[[#{BD.TB-TITULO10}]]</a>
+					</td>
+			</tbody>
+		</table>
+	</div>
+
+	<br>
+
+	<footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>

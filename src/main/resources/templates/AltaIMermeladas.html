@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Nuevo Registro Mermelada</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+<!-- Nuestro css-->
+<link rel="stylesheet" type="text/css" href="static/css/fondo.css"
+	th:href="@{/css/fondo.css}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+	<header th:replace="layout/plantilla :: encabezado"></header>
+   
+	<div class="container mt-4">
+		<form th:action="@{/guardarnuevoIMermeladas}" th:object=${ame} method="POST">
+			<div class="mb-3">
+				<label for="id_RM" class="form-label">Codigo de Producto</label> <input
+					th:field="*{id_RM}" class="form-control" type="text"
+					placeholder="id_RM" aria-label="id_RM" disabled>
+			</div>
+			<div class="mb-3">
+				<label for="idsabor" class="form-label">Sabor</label>
+				<textarea th:field="*{sabor}" class="form-control"
+					required="required" id="sabor" rows="3"></textarea>
+			</div>
+			<div class="mb-3">
+				<label for="idtam" class="form-label">Tamaño</label>
+				<textarea th:field="*{tam}" class="form-control"
+					required="required" id="tam" rows="3"></textarea>
+			</div>
+			<div class="mb-3">
+				<label for="idcantidad" class="form-label">Cantidad</label>
+				<input th:field="*{cantidad}" class="form-control" type="number" required="required"
+					id="cantidad" rows="3"></input>
+			</div>
+			<div class="mb-3">
+				<label for="idfechaR" class="form-label">Fecha de Registro</label> <input
+					th:field="*{fechaR}" class="form-control" type="datetime-local"
+					placeholder="fechaR" aria-label="fechaR" disabled>
+			</div>
+			<div class="mb-3">
+				<label for="idfechaC" class="form-label">Fecha de Caducidad</label> <input
+					th:field="*{fechaC}" class="form-control" type="date"
+					placeholder="dia/Mes/Año hora:minutos" aria-label="fechaC">
+			</div>
+			
+<div class="col-12">
+			<button type="submit" class="btn btn-primary">Guardar</button>
+			<button type="submit" class="btn btn-warning">Cancelar</button>
+			</div>
+		</form>
+	</div>
+
+	<footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>

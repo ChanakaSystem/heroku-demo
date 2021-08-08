@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Precio Mermeladas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+<!-- Nuestro css-->
+    	<link rel="stylesheet" type="text/css" href="static/css/fondo.css" th:href="@{/css/fondo.css}">
+
+</head>
+<body>
+	<header th:replace="layout/plantilla :: encabezado"></header>
+	<br/>
+	<a th:href="@{/nuevoPMermelada}" class="btn btn-primary">[[#{BD.TB-TITULO0}]]</a> <!--Nueva Mermelada -->
+
+	<div class="container-lg">
+
+		<table class="table">
+			<thead class="table-dark table-sm">
+				<tr>
+					<th scope="col">[[#{BD.TB-TITULO1}]]</th><!-- id_PM -->
+					<th scope="col">SABOR</th><!-- sabor -->
+					<th scope="col">PRECIO 10g</th><!-- c30g -->
+					<th scope="col">PRECIO 20g</th><!-- c110g -->
+					<th scope="col">PRECIO 30g</th><!-- c250g -->
+					<th scope="col">PRECIO 40g</th><!-- c450g-->
+                    <th scope="col">[[#{BD.TB-TITULO9}]]</th><!--Editar -->
+					<th scope="col">[[#{BD.TB-TITULO10}]]</th><!-- Eliminar -->
+			</thead>
+			<tbody>
+				<tr th:each="pm:${mermeladas}">
+					<td th:text="${pm.id_PM}">c</td>
+					<td th:text="${pm.sabor}">c</td>
+					<td th:text="${pm.c30g}">c</td>
+					<td th:text="${pm.c110g}">c</td>
+					<td th:text="${pm.c250g}">c</td>
+					<td th:text="${pm.c450g}">c</td>
+										<td >
+					<a th:href="@{/editarPMermelada/}+${pm.id_PM}" class="btn btn-warning">[[#{BD.TB-TITULO9}]]</a>
+					</td>
+					<td>
+					<a th:href="@{/eliminarPMermelada/}+${pm.id_PM}" class="btn btn-danger">[[#{BD.TB-TITULO10}]]</a>
+					</td>
+			</tbody>
+		</table>
+	</div>
+
+	<br>
+
+	<footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>

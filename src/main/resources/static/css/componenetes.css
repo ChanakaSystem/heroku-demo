@@ -1,0 +1,17 @@
+body{
+    background-image:url(../imagenes/fondoCom.jpg);
+	background-size:100vw 100vh;
+	background-attachment:fixed;
+	margin:0;
+	font-family: monospace;
+	
+	
+}
+*{text-align: center;}
+
+p {
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: lightblue;
+}
+

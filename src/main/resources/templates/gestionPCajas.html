@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Precio Cajas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+<!-- Nuestro css-->
+    	<link rel="stylesheet" type="text/css" href="static/css/fondo.css" th:href="@{/css/fondo.css}">
+
+</head>
+<body>
+	<header th:replace="layout/plantilla :: encabezado"></header>
+	<br/>
+	<a th:href="@{/nuevoPCajas}" class="btn btn-primary">[[#{BD.TB-TITULO0}]]</a> <!--Nueva Mermelada -->
+
+	<div class="container-lg">
+
+		<table class="table">
+			<thead class="table-dark table-sm">
+				<tr>
+					<th scope="col">[[#{BD.TB-TITULO1}]]</th><!-- id_PL -->
+					<th scope="col">TAMAÑO</th><!-- sabor -->
+					<th scope="col">PRECIO BASE</th><!-- preCB -->
+					<th scope="col">DESCUENTO 10%</th><!-- preCG -->
+					<th scope="col">DESCUENTO 20%</th><!-- preCG -->
+					<th scope="col">DESCUENTO 30%</th><!-- preCG -->
+					<th scope="col">DESCUENTO 40%</th><!-- preCG -->
+					<th scope="col">[[#{BD.TB-TITULO9}]]</th><!--Editar -->
+					<th scope="col">[[#{BD.TB-TITULO10}]]</th><!-- Eliminar -->
+			</thead>
+			<tbody>
+				<tr th:each="pcas:${preca}">
+					<td th:text="${pcas.id_PC}">Codigo de producto</td>
+					<td th:text="${pcas.tam}">Sabor</td>
+					<td th:text="${pcas.preb}">PrecioCH</td>
+					<td th:text="${pcas.d10}">PrecioGB</td>
+					<td th:text="${pcas.d20}">PrecioGB</td>
+					<td th:text="${pcas.d30}">PrecioGB</td>
+					<td th:text="${pcas.d40}">PrecioGB</td>
+															<td >
+					<a th:href="@{/editarPCajas/}+${pcas.id_PC}" class="btn btn-warning">[[#{BD.TB-TITULO9}]]</a>
+					</td>
+					<td>
+					<a th:href="@{/eliminarPCajas/}+${pcas.id_PC}" class="btn btn-danger">[[#{BD.TB-TITULO10}]]</a>
+					</td>
+			</tbody>
+		</table>
+	</div>
+
+	<br>
+
+	<footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>

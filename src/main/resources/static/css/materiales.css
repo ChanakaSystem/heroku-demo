@@ -1,0 +1,68 @@
+body{
+    background-image:url(../imagenes/FondoAr.jpg);
+	background-size:100vw 100vh;
+	background-attachment:fixed;
+	margin:0;
+	font-family: monospace;
+	
+	
+}
+
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards .card{
+    background: #4d0686;
+    display: flex;
+    width: 80%;
+    height: 500px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cards .card img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
+
+.cards .card > .contenido-texto-card{
+    width: 60%;
+    color: #fff;
+}
+
+.cards .card > .contenido-texto-card p{
+    font-weight: 300;
+    padding-top: 5px;
+}
+
+ /* Clientes */
+
+    .cards{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards .card{
+        width: 90%;
+    }
+
+    .cards .card:first-child{
+        margin-bottom: 30px;
+    }
+    
+   p{
+   font-family: 'Yanone Kaffeesatz', sans-serif;
+   font-zise: 40px;
+   }
+   h{
+   font-family: 'Paytone One', sans-serif;
+   }
